@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <parent>
+    <groupId>com.jive.myco</groupId>
+    <artifactId>parent</artifactId>
+    <version>39</version>
+  </parent>
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>jiveweb</artifactId>
+  <name>Jiveweb</name>
+  <packaging>pom</packaging>
+
+  <scm>
+    <connection>scm:git:ssh://git@github.com:jive/jiveweb.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com:jive/jiveweb.git</developerConnection>
+    <url>https://github.com/jive/JiveWeb</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <configuration>
+          <filesets>
+            <fileset>
+              <directory>node_modules</directory>
+              <excludes>
+                <exclude>**/*</exclude>
+              </excludes>
+              <followSymlinks>false</followSymlinks>
+              <useDefaultExcludes>false</useDefaultExcludes>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>com.jive.myco.tools</groupId>
+        <artifactId>jazz-maven-plugin</artifactId>
+        <configuration>
+          <gruntSource/>
+          <className/>
+        </configuration>
+        <executions>
+          <execution>
+            <id>default-package-static-web</id>
+            <goals>
+              <goal>jeb-package-static-web</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>default-grunt-itest</id>
+            <goals>
+              <goal>integration-test</goal>
+              <goal>test-run</goal>
+            </goals>
+            <configuration>
+              <timeout>12000000</timeout>
+              <failIfNoTests>true</failIfNoTests>
+            </configuration>
+          </execution>
+          <!-- TODO: enable when you have a need for a test launcher (to host backend APIs) -->
+          <!--<execution>-->
+          <!--<id>default-itest</id>-->
+          <!--<goals>-->
+          <!--<goal>itest-setup</goal>-->
+          <!--<goal>itest-teardown</goal>-->
+          <!--</goals>-->
+          <!--<configuration>-->
+          <!--<className>com.jive.office.workflow.itest.WorkflowUberLauncher</className>-->
+          <!--<timeout>120000</timeout>-->
+          <!--</configuration>-->
+          <!--</execution>-->
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

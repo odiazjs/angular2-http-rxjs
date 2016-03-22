@@ -1,0 +1,27 @@
+{
+  "env": {
+    "browser": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "strict": 0,
+    "quotes": 0,
+    "no-underscore-dangle": 0,
+    "semi": 0,
+    "eol-last": 0,
+    "no-trailing-spaces": 0,
+    "curly": 0,
+    "no-alert": 0,
+    "dot-notation": 0,
+    "no-use-before-define": 0,
+    "no-wrap-func": 0,
+    "camelcase": 0,
+    "no-return-assign": 0,
+    "consistent-return": 0,
+    "no-multi-spaces": 0
+  },
+  "globals": {
+    "ga": true
+  }
+
+}
