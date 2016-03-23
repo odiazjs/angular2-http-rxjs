@@ -4,3 +4,10 @@ npm-debug.log
 build
 translations.js
 .DS_Store
+.idea/
+!typings/custom.d.ts
+typings/browser.d.ts
+typings/main.d.ts
+typings/browser/
+typings/main/
+!typings/custom/

@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es6"
+    "target": "es6",
+    "module": "commonjs"
   },
-  "files": [
-    "typings/tsd.d.ts"
-  ],
   "exclude": [
-        "./components/*/**.html"
-    ]
+    "typings/main.d.ts",
+    "typings/main",
+    "node_modules"
+  ]
 }
