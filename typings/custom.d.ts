@@ -1,0 +1,1 @@
+/// <reference path="custom/require.d.ts" />
