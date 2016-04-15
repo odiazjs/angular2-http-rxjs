@@ -1,0 +1,9 @@
+<div>
+    <button type="button" (click)='getPosts($event)'>GET POSTS</button>
+    
+    <div *ngFor="#post of posts">
+        <div>
+            <label>{{ post.Title }}</label>
+        </div>
+    </div>
+</div>
