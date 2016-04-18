@@ -5,20 +5,20 @@ import 'rxjs/Rx';
 import {IHttpContract} from '../../commons/http/http.contract.ts'
 import {ResponseObject} from '../../commons/http/responseObject.model';
 import {Post} from './post.model'
+import {UrlProvider} from '../../commons/url/url.provider'
 
 @Injectable()
 export class PostService implements IHttpContract{
-    
-    public url : string
+
     public response : Response
     
     constructor (public http: Http) {
-        this.url = 'http://jsonplaceholder.typicode.com/posts';
+        
     }
     
     Get () : Observable<ResponseObject> {
 
-        return this.http.get(this.url)
+        return this.http.get(new UrlProvider(Post, 'GET').buildUrl())
                         .map(data => new ResponseObject(data))
         
     }

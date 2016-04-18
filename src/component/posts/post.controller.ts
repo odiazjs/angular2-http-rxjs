@@ -9,26 +9,25 @@ import {Post} from './post.model';
     providers: [PostService],
     directives: [],
     template: `
-            <div>
-                <button type="button" (click)='getPosts($event)'>Get Posts</button>
-                    <div *ngFor="#post of posts">
-                        <div>
-                            <label>{{ post.Title }}</label>
+                <div>
+                    <button type="button" (click)='getPosts($event)'>Get Posts</button>
+                        <div *ngFor="#post of posts">
+                            <div>
+                                <label>{{ post.title }}</label>
+                            </div>
                         </div>
-                    </div>
-            </div>`
+                </div>`
 })
 
 @Injectable()
 export class PostPage {
 
     public postService: PostService
-    public _url: string
     public posts: Post[]
     public errorMessage: string
     
-    constructor(httpService: PostService) {
-        this.postService = httpService
+    constructor(postService: PostService) {
+        this.postService = postService
     }
     
     getPosts () {
@@ -36,15 +35,7 @@ export class PostPage {
         this.posts = []
         this.postService.Get()
                          .subscribe((responseObject) => {
-                                responseObject.result
-                                              .map((post) => {
-                                                  this.posts.push(new Post(
-                                                      post.userId, 
-                                                      post.id, 
-                                                      post.title, 
-                                                      post.body
-                                                  ))
-                                              })
+                                this.posts = <Post[]>responseObject.result
                             },
                             error => this.errorMessage = <any>error
                          )	
