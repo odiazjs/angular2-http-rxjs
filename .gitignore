@@ -11,3 +11,4 @@ typings/main.d.ts
 typings/browser/
 typings/main/
 !typings/custom/
+.vscode
