@@ -12,3 +12,5 @@ typings/browser/
 typings/main/
 !typings/custom/
 .vscode
+*.map
+src/**/*.js
