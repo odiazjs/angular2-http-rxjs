@@ -1,7 +1,7 @@
 {
   "name": "webtemplate",
   "version": "0.0.1",
-  "description": "Cloneable template ot get apps started",
+  "description": "angular 2 with http observables container",
   "main": "build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,12 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jive/webtemplate.git"
+    "url": "git+https://github.com/thinkblue36/angular2-http-rxjs"
   },
-  "author": "dfenstermaker <dannyfenstermaker@gmail.com>",
-  "license": "ISC",
+  "author": "thinkblue36 <odiaz.dw@gmail.com>",
+  "license": "ODZ",
   "bugs": {
-    "url": "https://github.com/jive/webtemplate/issues"
+    "url": ""
   },
   "devDependencies": {
     "angular2": "^2.0.0-beta.15",
@@ -43,5 +43,5 @@
     "webpack-dev-server": "1.12.1",
     "zone.js": "^0.6.11"
   },
-  "homepage": "https://github.com/jive/webtemplate#readme"
+  "homepage": "https://github.com/thinkblue36/angular2-http-rxjs#readme"
 }
